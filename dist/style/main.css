@@ -1,0 +1,78 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+:root {
+  --clr-accent-100: #06c;
+}
+
+::-webkit-scrollbar {
+  width: clamp(2px, 1vw, 8px);
+  background-color: #f1f1f1;
+  border-radius: 20px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #888;
+  border-radius: 20px;
+}
+
+body {
+  scroll-behavior: smooth;
+  min-height: 200vh;
+  width: 100%;
+}
+
+header {
+  position: fixed;
+  min-width: 100%;
+  background-color: #f9f9fc;
+  backdrop-filter: blur(4px);
+}
+#header-content {
+  margin-inline: auto;
+  max-width: 85rem;
+}
+
+.categories-list a {
+  position: relative;
+  padding-inline: clamp(.25rem, 1vw, 1rem);
+  display: block;
+  border-right: 1px solid #777;
+  transition: ease-in-out 0.2s background-color;
+}
+.categories-list li:last-child a {
+  border-right: none;
+}
+.categories-list a::before {
+  content: "";
+  position: absolute;
+  left: 10px;
+  right: 10px;
+  bottom: -5px;
+  height: 0; /* goes to 2px */
+  background-color: var(--clr-accent-100);
+  opacity: 0;
+  border-radius: 99px;
+  transition: opacity ease-out .3s, height ease-out .3s;
+}
+.categories-list a:is(:hover, :focus-visible)::before {
+  height: 2px;
+  opacity: 1;
+}
+
+
+/* 
+
+
+
+
+
+
+MAIN */
+main {
+  padding-top: 5rem;
+}
