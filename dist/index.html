@@ -4,8 +4,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="./assets/logo-transparent.png" type="image/png">
 
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.js"></script>
+  <script defer src="./script/main.js"></script>
+  <script async src="./script/search.js"></script>
 
   <link rel="stylesheet" href="./output.css">
   <link rel="stylesheet" href="./style/main.css">
@@ -13,12 +16,32 @@
 </head>
 
 <body>
+  <div id="blurryBg"></div>
+  
+  
+  <aside id="sideMenu" class="closed">
+    <h2 class="text-4xl text-center">Menu</h2>
+    <nav class="menu-nav">
+      <ul class="aside-categories-list">
+        <li><a href="#">Tech</a></li>
+        <li><a href="#">Smartphone & Tablet</a></li>
+        <li><a href="#">Storage</a></li>
+        <li><a href="#">Impression</a></li>
+        <li><a href="#">TV-Sound-Photos</a></li>
+        <li><a href="#">Home appliance</a></li>
+        <li><a href="#">Security</a></li>
+        <li><a href="#">Office</a></li>
+        <li><a href="#">Connection</a></li>
+      </ul>
+    </nav>
+  </aside>
+
   <header>
     <div id="header-content" class="px-2 py-3 flex items-center justify-between">
       <div class="logo_container">
-        <a href="./" class="items-center flex gap-2"">
+        <a href="./" class="items-center flex gap-2">
           <img width=" 25" src="./assets/logo-transparent.png" alt="Logo">
-          <h1 class="text-xl text-center">Online Shop</h1>
+          <h1 id="main-title" class="text-xl text-center">Shop</h1>
         </a>
       </div>
       <nav class="header-nav">
@@ -35,24 +58,63 @@
         </ul>
       </nav>
       <div class="pages-list flex items-center gap-4">
-        <a href="./search.php" class="search-btn-small">
+        <button id="showSearchMenuBtn" class="right-menu-btn search-btn-small">
           <img width="30" src="./assets/search.svg" alt="Search">
-        </a>
-        <a href="./basket.php" class="page-btn-small">
+        </button>
+        <a href="./basket.php" class="right-menu-btn page-btn-small">
           <img width="25" src="./assets/basket.svg" alt="Basket">
         </a>
-        <a href="./account.php" class="page-btn-small">
+        <a href="./account.php" class="right-menu-btn page-btn-small">
           <img width="25" src="./assets/account.svg" alt="Account">
         </a>
+        <button id="menu-btn" class="right-menu-btn showAside" aria-label="Main Menu">
+          <svg viewBox="0 0 100 100">
+            <path class="line line1"
+              d="M 20,29.000046 H 80.000231 C 80.000231,29.000046 94.498839,28.817352 94.532987,66.711331 94.543142,77.980673 90.966081,81.670246 85.259173,81.668997 79.552261,81.667751 75.000211,74.999942 75.000211,74.999942 L 25.000021,25.000058" />
+            <path class="line line2" d="M 20,50 H 80" />
+            <path class="line line3"
+              d="M 20,70.999954 H 80.000231 C 80.000231,70.999954 94.498839,71.182648 94.532987,33.288669 94.543142,22.019327 90.966081,18.329754 85.259173,18.331003 79.552261,18.332249 75.000211,25.000058 75.000211,25.000058 L 25.000021,74.999942" />
+          </svg>
+        </button>
+        </div>
+        </div>
+        <div class="menu" id="searchMenu">
+          <form id="search-form" method="post" onsubmit="return false">
+            <button>
+              <img width="35" src="./assets/search.svg" alt="Search">
+            </button>
+            <input placeholder="Search..." type="text" autofocus>
+          </form>
+          <div id="search-results" class="searchRes">
+            <h4 class="text-xl py-1">Results :</h4>
+            <ul id="searchResContent">
+              <!-- template -->
+              <!-- <li><a href="#">Phone</a></li>
+                                                              <li><a href="#">Iphone</a></li>
+                                                              <li><a href="#">BlaBla</a></li> -->
+              <!-- template -->
+            </ul>
+          </div>
+          <div id="search-suggestions" class="searchRes">
+            <h4 class="text-xl py-1">Suggestions :</h4>
+            <ul>
+              <li><a href="#">Climatiseur</a></li>
+              <li><a href="#">Smartphone</a></li>
+              <li><a href="#">Pc Portable</a></li>
+              <li><a href="#">Smart TV</a></li>
+            </ul>
       </div>
     </div>
   </header>
 
   <main class="text-red-500">
-    <section class="text">
-      <h2>Main content O_O</h2>
+    <section id="hero-section" class="text">
+      <div id="showCase">
+        <img src="" alt="">
+      </div>
     </section>
   </main>
 </body>
+
 
 </html>
