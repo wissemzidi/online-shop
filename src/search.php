@@ -27,6 +27,7 @@ if (isset($_GET['q'])) {
     array_push($resData, [
       "id" => $id,
       "name" => $name,
+      "image" => $row['image'],
     ]);
   }
 

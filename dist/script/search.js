@@ -1,4 +1,4 @@
-$(document).ready(function () {
+$(function () {
   $("#search-form").on("keyup", () => $("#search-form").trigger("submit"));
 
   $("#search-form").on("submit", function (e) {
@@ -26,10 +26,10 @@ function searchFetch() {
     },
     success: function (response, textStatus, jqXHR) {
       let newContent = "";
-      response.forEach((ele) => {
+      response.forEach((ele, i) => {
         let url = `./product.php?id=${ele["id"]}`;
         newContent += `
-            <li><a href="${url}">${ele["name"]}</a></li>
+            <li><a class="searchLink searchResLink" tabindex="-1" href="${url}">${ele["name"]}</a></li>
           `;
       });
       $("#searchResContent").html(newContent);

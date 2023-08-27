@@ -18,23 +18,7 @@
 <body>
   <div id="blurryBg"></div>
   
-  
-  <aside id="sideMenu" class="closed">
-    <h2 class="text-4xl text-center">Menu</h2>
-    <nav class="menu-nav">
-      <ul class="aside-categories-list">
-        <li><a href="#">Tech</a></li>
-        <li><a href="#">Smartphone & Tablet</a></li>
-        <li><a href="#">Storage</a></li>
-        <li><a href="#">Impression</a></li>
-        <li><a href="#">TV-Sound-Photos</a></li>
-        <li><a href="#">Home appliance</a></li>
-        <li><a href="#">Security</a></li>
-        <li><a href="#">Office</a></li>
-        <li><a href="#">Connection</a></li>
-      </ul>
-    </nav>
-  </aside>
+
 
   <header>
     <div id="header-content" class="px-2 py-3 flex items-center justify-between">
@@ -78,30 +62,45 @@
         </button>
         </div>
         </div>
+        <div class="menu" id="aside-nav">
+          <nav class="menu-nav">
+            <ul class="aside-categories-list">
+              <li><a href="#">Tech</a></li>
+              <li><a href="#">Smartphone & Tablet</a></li>
+              <li><a href="#">Storage</a></li>
+              <li><a href="#">Impression</a></li>
+              <li><a href="#">TV-Sound-Photos</a></li>
+              <li><a href="#">Home appliance</a></li>
+              <li><a href="#">Security</a></li>
+              <li><a href="#">Office</a></li>
+              <li><a href="#">Connection</a></li>
+            </ul>
+          </nav>
+        </div>
         <div class="menu" id="searchMenu">
           <form id="search-form" method="post" onsubmit="return false">
             <button>
               <img width="35" src="./assets/search.svg" alt="Search">
             </button>
-            <input placeholder="Search..." type="text" autofocus>
+            <input class="searchInput" id="searchInput" placeholder="Search..." type="text" autofocus>
           </form>
           <div id="search-results" class="searchRes">
             <h4 class="text-xl py-1">Results :</h4>
             <ul id="searchResContent">
               <!-- template -->
-              <!-- <li><a href="#">Phone</a></li>
-                                                              <li><a href="#">Iphone</a></li>
-                                                              <li><a href="#">BlaBla</a></li> -->
+              <!-- <li><a href="#">Iphone 14 pro max</a></li> -->
+              <!-- <li><a href="#">Iphone</a></li> -->
+              <!-- <li><a href="#">BlaBla</a></li> -->
               <!-- template -->
             </ul>
           </div>
           <div id="search-suggestions" class="searchRes">
             <h4 class="text-xl py-1">Suggestions :</h4>
             <ul>
-              <li><a href="#">Climatiseur</a></li>
-              <li><a href="#">Smartphone</a></li>
-              <li><a href="#">Pc Portable</a></li>
-              <li><a href="#">Smart TV</a></li>
+              <li><a tabindex="-1" class="searchLink" href="#">Climatiseur</a></li>
+              <li><a tabindex="-1" class="searchLink" href="#">Smartphone</a></li>
+              <li><a tabindex="-1" class="searchLink" href="#">Pc Portable</a></li>
+              <li><a tabindex="-1" class="searchLink" href="#">Smart TV</a></li>
             </ul>
       </div>
     </div>
@@ -109,8 +108,23 @@
 
   <main class="text-red-500">
     <section id="hero-section" class="text">
-      <div id="showCase">
-        <img src="" alt="">
+      <div class="mainShowCase">
+        <button class="controlButton" id="previousImage" title="previous image">
+          <img width="40" src="./assets/previousArrow.svg" alt="->">
+        </button>
+        <a href="">
+          <img width="100%"
+            src="https://e0.pxfuel.com/wallpapers/112/62/desktop-wallpaper-crystal-multicolored-faces-geometry-u-16-9-background.jpg"
+            alt="">
+        </a>
+        <!-- <img width="100%"
+                      src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQn_epMvynt8hwqZ_RcMafbH_5Se4KHAUuipA&usqp=CAU" alt=""> -->
+        <!-- <img width="100%"
+                      src="https://e0.pxfuel.com/wallpapers/793/399/desktop-wallpaper-black-blue-abstract-stripes-widescreen-16-9-background-1600-x-900-black.jpg"
+                      alt=""> -->
+        <button class="controlButton" id="nextImage" title="next image">
+          <img width="40" src="./assets/nextArrow.svg" alt="->">
+        </button>
       </div>
     </section>
   </main>
